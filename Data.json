@@ -27,7 +27,8 @@
 					"if": "if(Condition){exec Statement;}",
 					"else": "else{exec Statement;}",
 					"else if": "else if(Condition){exec Statement;}"
-						},								   
+						}								   
 			}
 	}
+	]
 }
