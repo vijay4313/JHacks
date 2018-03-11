@@ -1,34 +1,34 @@
 {
-"dictionary":[
-				
-	{
-	"language": "C++",
-	"syntax": {
-			"variable": "VarName=Value;",
-			"input":"cin<<UserInput;",
-			"output":"cout>>PrintVal;",
-			"loop": "for(StartVal;Condition;EndVal)",						
-			"arithmatic": {
-						"+": "Result=Var1+Var2;",
-						"-": "Result=Var1-Var2;",
-						"*": "Result=Var1*Var2;",
-						"/": "Result=Var1/Var2;",
-						"%": "Result=Var1%Var2;"
-						},
-			"logical": {
-					"==": "Var1++Var2;",
+	"dictionary": [
+
+		{
+			"language": "C++",
+			"syntax": {
+				"variable": "VarName=Value;",
+				"input": "cin<<UserInput;",
+				"output": "cout>>PrintVal;",
+				"loop": "for(StartVal;Condition;EndVal)",
+				"arithmatic": {
+					"+": "Result=Var1+Var2;",
+					"-": "Result=Var1-Var2;",
+					"*": "Result=Var1*Var2;",
+					"/": "Result=Var1/Var2;",
+					"%": "Result=Var1%Var2;"
+				},
+				"logical": {
+					"==": "Var1==Var2;",
 					"!=": "Var1!=Var2;",
 					">": "Var1>Var2;",
 					"<": "Var1<Var2;",
 					">=": "Var1>=Var2;",
 					"<=": "Var1<=Var2;"
-					},
-			"conditional": {
+				},
+				"conditional": {
 					"if": "if(Condition){exec Statement;}",
 					"else": "else{exec Statement;}",
 					"else if": "else if(Condition){exec Statement;}"
-						}								   
+				}
 			}
-	}
+		}
 	]
 }
