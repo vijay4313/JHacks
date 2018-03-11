@@ -1,0 +1,36 @@
+#app-frame{
+  width:auto;
+  border: 1px solid black;
+  height: 200px;
+  padding: 5px;
+}
+#dragging{
+  width:66%;
+  float: left;
+  height: 200px;
+  
+}
+#input{
+  width:47%;
+  border: 1px solid black;
+  padding: 5px;
+  float: left;
+  margin: 5px;
+  height: 90%;
+}
+#canvas{
+  width:47%;
+  border: 1px solid black;
+  padding: 5px;
+  float: left;
+  height: 90%;
+  margin: 5px;
+}
+#output{
+  width:31%;
+  border: 1px solid black;
+  padding: 5px;
+  float: left;
+  height: 90%;
+  margin: 5px;
+}
