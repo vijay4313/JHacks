@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <title> DASH </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <body>
+  <style>
+    .draw_board {
+      background-color: #D3D3D3;
+      border-color : black;
+      width : 50%;
+      height : 800px;
+    }
+
+    #mydiv {
+	    position: absolute;
+	    z-index: 9;
+	    background-color: #f1f1f1;
+	    text-align: center;
+	    border: 1px solid #d3d3d3;
+	}
+
+	#mydivheader {
+	    padding: 10px;
+	    cursor: move;
+	    z-index: 10;
+	    background-color: #2196F3;
+	    color: #fff;
+	}
+
+	#mydiv2 {
+		position: absolute;
+	    z-index: 11;
+	    background-color: #f1f1f1;
+	    text-align: center;
+	    border: 1px solid #d3d3d3;
+	}
+
+	#mydivheader2 {
+	    padding: 10px;
+	    cursor: move;
+	    z-index: 12;
+	    background-color: #2196F3;
+	    color: #fff;
+	}
+
+	.icons {
+      background-color : #AEAEAE;
+      border-color : #FFFFFF;-
+      height : 800px;
+      width : 25px;
+    }
+  </style>
+  <div class = "draw_board", id = "draw_board">
+  	<div id = "icons", style = "float:left">
+  		<button type="button" id = "drop_forloop">Click Me!</button>
+  	</div>
+  	<div id="mydiv">
+  		<div id="mydivheader">Click here to move</div>
+  		<p>Move</p>
+  		<p>this</p>
+  		<p>DIV</p>
+  	</div>
+  </div>
+
+  <script>
+//Make the DIV element draggagle:
+
+document.getElementById("drop_forloop").onclick = createDiv;
+document.getElementById("mydiv").addEventListener("onmousedown", dragElement(document.getElementById("mydiv")));
+document.getElementById("mydiv2").addEventListener("onmousedown", dragElement(document.getElementById("mydiv2")));
+
+function createDiv() {
+
+  	var mydiv = document.createElement('div');
+  	mydiv.id = "mydiv2";
+  	var divhead = document.createElement('div');
+  	divhead.id = "mydivheader2";
+  	var txtNode = document.createTextNode("Drag Me")
+	divhead.appendChild(txtNode);
+	mydiv.appendChild(divhead);
+	document.getElementById("draw_board").appendChild(mydiv)
+  }
+
+
+function dragElement(elmnt) {
+  var divheight = document.getElementById("draw_board").clientHeight;
+  var divwidth = document.getElementById("draw_board").clientWidth;
+  var divleft = document.getElementById("draw_board").offsetLeft;
+  var divtop = document.getElementById("draw_board").offsetTop;
+  var pos1 = -10, pos2 = -20, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = Math.min(Math.max((elmnt.offsetTop - pos2), divtop), (divheight - elmnt.clientHeight)) + "px";
+    elmnt.style.left = Math.min(Math.max((elmnt.offsetLeft - pos1), divleft), (divwidth - elmnt.clientWidth)) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+
+}
+</script>
+
+</body>
+</html>
+
+      
+      
