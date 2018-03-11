@@ -32,12 +32,12 @@ class python:
 		pass
 
 	def forloop(self, start, operator, stop, child):
-		code = """for i in range(%s,%s):%s\n""" %(start, stop, """\t"""+str(self.child_opts(child)))
+		code = """for i in range(%s,%s):\n%s""" %(start, stop,str(self.child_opts(child)))
 		
 		return code
 
 	def ifstat(self, cond, child):
-		code =  """if %s: \t%s""" %(cond,"""\t"""+str(self.child_opts(child)))
+		code =  """if %s: \n%s""" %(cond,str(self.child_opts(child)))
 		return code
 
 	def init(self, var, val):
@@ -48,7 +48,7 @@ class python:
 		num_opts = len(child)
 		code = ""
 		for item in child:
-			code += """\n\t%s""" %(item)
+			code += """\t%s\n""" %(item)
 
 		return code
 
@@ -86,7 +86,7 @@ for i in range(5):
 	inits.append(init1)
 
 
-ifs = x.ifstat("i <= 10", inits)
+ifs = x.ifstat("i <= 10", ["\t" + s for s in inits])
 
 loop = x.forloop("1", "<=", "10", [ifs])
 
