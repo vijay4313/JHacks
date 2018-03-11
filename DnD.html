@@ -1,0 +1,39 @@
+<head>
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+   rel = "stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  
+</head>
+<body>
+  <script>
+         $(function() {
+            $("#shika").draggable({containment : "#dragging", helper:"clone", appendTo:"#canvas"});
+           $("#canvas").droppable({accept : "#shika", drop: function (event, ui) {
+		ui.helper.clone().appendTo('#canvas');
+    } });
+              
+         });
+      </script>
+  <div id="header">
+    Header goes here
+  </div>
+  <div id="app-frame" >
+    <div id="dragging">
+    <section id="input">
+      Input goes here
+    
+      <div id="shika" class = "ui-widget-content">
+        draggable
+      </div>
+    </section>
+    <section id="canvas">
+      Canvas
+      
+    </section>
+    </div>
+    <section id="output">
+    </section>
+    
+ 
+</body>
