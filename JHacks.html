@@ -201,7 +201,7 @@
           scrollsPageOnFocus: false,
           nodeTemplateMap: myDiagram.nodeTemplateMap,  // share the templates used by myDiagram
           model: new go.GraphLinksModel([  // specify the contents of the Palette
-            { category: "Start", text: "Start" },
+            { category: "Start", text: "Start", language: "Python" },
             { category:"assignnment",text: "assignment" },
             { category:"condition",text: "condition", figure: "Diamond" },
             { category: "End", text: "End" },
@@ -240,6 +240,12 @@
 </script>
 </head>
 <body onload="init()">
+   <select id="languageSelect">
+    <option value="">Select a Language</option>
+    <option value="C++">C++</option>
+    <option value="Python">Python</option>
+    <option value="Matlab">Matlab</option>
+  </select>
 <div id="sample">
   <div style="width: 100%; display: flex; justify-content: space-between">
     <div id="myPaletteDiv" style="width: 300px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black" ></div>
