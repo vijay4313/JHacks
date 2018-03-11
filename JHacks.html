@@ -124,7 +124,7 @@
         makePort("L", go.Spot.Left, false, true),
         makePort("R", go.Spot.Right, false, true)
       ));
-    myDiagram.nodeTemplateMap.add("Comment",
+    myDiagram.nodeTemplateMap.add("initialize",
       $(go.Node, "Spot", nodeStyle(),
          $(go.Panel, "Auto",
           $(go.Shape, "Circle",
@@ -205,7 +205,7 @@
             { category:"initialization",text: "assignment" },
             { category:"condition",text: "condition", figure: "Diamond" },
             { category: "End", text: "End" },
-            { category: "comment", text: "Initialize" }
+            { category: "initialize", text: "Initialize" }
           ])
         });
   } // end init
