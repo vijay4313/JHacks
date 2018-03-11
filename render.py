@@ -22,7 +22,7 @@ def my_form_post():
     nodeDataArray_json = parsed_json['nodeDataArray']
     category_string = ""
     for i in nodeDataArray_json:
-        category_string = category_string+ i['category']+" "
+        category_string = category_string+ i['category']+" "+i['text']+" "+str(i['key'])+" "
     
     return category_string
     
